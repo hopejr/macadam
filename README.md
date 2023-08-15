@@ -1,5 +1,8 @@
 # Macadam
 
+> [!NOTE]
+> This repository differs from upstream in that it doesn't use segfault-handler as it would cause issues with Electron on Windows in some cases.
+
 Bindings to link [Node.js](http://nodejs.org/) and the Blackmagic Desktop Video devices, enabling asynchronous capture and playback to and from [Blackmagic Design](https://www.blackmagicdesign.com/) devices via a simple Javascript API. Keying is supported where it is available on the device.
 
 Linux, Windows and MacOSX are all supported by this release. Please note that Blackmagic USB3 devices are not supported under Linux.

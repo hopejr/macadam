@@ -15,8 +15,6 @@
 
 const test = require('tape');
 const macadam = require('bindings')('macadam');
-const SegfaultHandler = require('segfault-handler');
-SegfaultHandler.registerHandler('crash.log');
 
 test('Passes C++ timecode value tests.', t => {
   t.ok(macadam.timecodeTest(), 'Passes all timecode tests.');
