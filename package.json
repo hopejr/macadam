@@ -17,6 +17,7 @@
     "install": "node arch.mjs",
     "build": "node-gyp rebuild",
     "build:arm": "CXX=arm-linux-gnueabihf-g++ node-gyp rebuild --arch\"arm\" --target_arch=\"arm\"",
+    "build:linuxx86":   "CXX=x86_64-linux-gnu-g++ node-gyp rebuild --arch\"x64\" --target_arch=\"x64\"",
     "test": "tape test/*Spec.js",
     "lint": "eslint index.js **/*.js"
   },
