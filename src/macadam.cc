@@ -56,7 +56,6 @@
 #include <CoreFoundation/CFString.h>
 #endif
 
-#define NAPI_EXPERIMENTAL
 #include "macadam_util.h"
 #include "capture_promise.h"
 #include "playback_promise.h"

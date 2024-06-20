@@ -52,7 +52,6 @@
 #include <comdef.h>
 #endif
 
-#define NAPI_EXPERIMENTAL
 #include "macadam_util.h"
 #include "node_api.h"
 #include "DeckLinkAPI.h"

@@ -494,7 +494,7 @@ The playout object has four utility methods for managing timecode:
 
 ## Status, support and further development
 
-The software is being actively tested and developed. Please note that some of the asynchronous features of the N-API used by this software are marked as _experimental_ in Node v10 LTS.
+The software is being actively tested and developed.
 
 Contributions can be made via pull requests and will be considered by the author on their merits. Enhancement requests and bug reports should be raised as github issues. For support, please contact [Streampunk Media](https://www.streampunk.media/). For updates follow [@StrmPunkd](https://twitter.com/StrmPunkd) on Twitter.
 
