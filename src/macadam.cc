@@ -433,7 +433,7 @@ napi_value deckLinkVersion(napi_env env, napi_callback_info info) {
   dlVerMinor = (deckLinkVersion & 0x00FF0000) >> 16;
   dlVerPoint = (deckLinkVersion & 0x0000FF00) >> 8;
 
-  sprintf(deckVer, "DeckLinkAPI version: %d.%d.%d", dlVerMajor, dlVerMinor, dlVerPoint);
+  snprintf(deckVer, 80, "DeckLinkAPI version: %d.%d.%d", dlVerMajor, dlVerMinor, dlVerPoint);
 
   deckLinkAPIInformation->Release();
   deckLinkIterator->Release();

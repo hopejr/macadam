@@ -178,14 +178,14 @@ HRESULT macadamTimecode::formatTimecodeString(const char** timecode, bool fieldF
   char* tcstr;
   if (fieldFlag) {
     tcstr = (char *) malloc(14 * sizeof(char));
-    sprintf(tcstr, "%02i:%02i:%02i%c%02i%s", hours, minutes, seconds,
+    snprintf(tcstr, 14, "%02i:%02i:%02i%c%02i%s", hours, minutes, seconds,
       ((flags & bmdTimecodeIsDropFrame) != 0) ? ';' : ':', frames,
       ((flags & bmdTimecodeFieldMark) == 0) ? ".0" : ".1");
     tcstr[13] = '\0';
   }
   else {
     tcstr = (char *) malloc(12 * sizeof(char));
-    sprintf(tcstr, "%02i:%02i:%02i%c%02i", hours, minutes, seconds,
+    snprintf(tcstr, 14, "%02i:%02i:%02i%c%02i", hours, minutes, seconds,
       ((flags & bmdTimecodeIsDropFrame) != 0) ? ';' : ':', frames);
     tcstr[11] = '\0';
   }
@@ -207,9 +207,9 @@ HRESULT macadamTimecode::GetString (/* out */ BSTR *timecode) {
 #elif __APPLE__
 HRESULT macadamTimecode::GetString (/* out */ CFStringRef *timecode) {
   const char* tcstr;
-  HRESULT hresult;
+  // HRESULT hresult;
 
-  hresult = formatTimecodeString(&tcstr);
+  /* hresult = */ formatTimecodeString(&tcstr);
   CFStringRef cftcstr = CFStringCreateWithCString(nullptr, tcstr, kCFStringEncodingMacRoman);
   *timecode = cftcstr;
   return E_NOTIMPL;
@@ -217,9 +217,9 @@ HRESULT macadamTimecode::GetString (/* out */ CFStringRef *timecode) {
 #else
 HRESULT macadamTimecode::GetString (/* out */ const char** timecode) {
   const char* tcstr;
-  HRESULT hresult;
+  // HRESULT hresult;
 
-  hresult = formatTimecodeString(&tcstr);
+  /* hresult = */ formatTimecodeString(&tcstr);
   *timecode = tcstr;
   return hresult;
 }

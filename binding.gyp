@@ -5,21 +5,20 @@
       ['OS=="mac"', {
         'sources' : [ "src/macadam_util.cc", "src/macadam.cc",
           "src/capture_promise.cc", "src/playback_promise.cc",
-          "src/timecode.cc" ],
+          "src/timecode.cc", "decklink/Mac/include/DeckLinkAPIDispatch.cpp" ],
         'xcode_settings': {
           'GCC_ENABLE_CPP_RTTI': 'YES',
-          'MACOSX_DEPLOYMENT_TARGET': '10.7',
+          'MACOSX_DEPLOYMENT_TARGET': '12.0',
           'OTHER_CPLUSPLUSFLAGS': [
-            '-std=c++11',
+            '-std=c++17',
             '-stdlib=libc++'
           ]
         },
-        "link_settings": {
-          "libraries": [
-            '-F/Library/Frameworks',
-            '-framework', 'DeckLinkAPI'
-          ]
-        },
+        "OTHER_LDFLAGS": [
+          "-F/Library/Frameworks",
+          "-framework", "DeckLinkAPI",
+          "-framework", "CoreFoundation"
+        ],
         "include_dirs" : [
           "decklink/Mac/include"
         ]

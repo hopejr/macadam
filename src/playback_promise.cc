@@ -888,10 +888,10 @@ void playedFrame(napi_env env, napi_value jsCb, void* context, void* data) {
 
     if (it->first > frame->scheduledTime - pbts->pendingTimeoutTicks) break;
     char* extMsg = (char *) malloc(sizeof(char) * 200);
-    sprintf(extMsg, "Pending frame promise timed out for scheduled time %lld as just played %lld.",
+    snprintf(extMsg, sizeof(char) * 200, "Pending frame promise timed out for scheduled time %lld as just played %lld.",
       (long long) it->second->scheduledTime, (long long) frame->scheduledTime);
     char errorCodeChars[20];
-    sprintf(errorCodeChars, "%d", MACADAM_FRAME_TIMEOUT);
+    snprintf(errorCodeChars, 20, "%d", MACADAM_FRAME_TIMEOUT);
     status = napi_create_string_utf8(env, errorCodeChars,
       NAPI_AUTO_LENGTH, &errorCode);
     FLOATING_STATUS;
