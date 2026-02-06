@@ -217,9 +217,9 @@ HRESULT macadamTimecode::GetString (/* out */ CFStringRef *timecode) {
 #else
 HRESULT macadamTimecode::GetString (/* out */ const char** timecode) {
   const char* tcstr;
-  // HRESULT hresult;
+   hresult;
 
-  /* hresult = */ formatTimecodeString(&tcstr);
+  hresult = formatTimecodeString(&tcstr);
   *timecode = tcstr;
   return hresult;
 }
